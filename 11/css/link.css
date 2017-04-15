@@ -1,0 +1,88 @@
+
+*{
+	box-sizing: border-box;
+}
+body{
+	padding: 0;
+	margin: 0;	
+	background: url(http://pic1.win4000.com/wallpaper/f/51bb0753bbd96.jpg)  repeat scroll top right ;
+}
+.clearfix::after{
+	content: "";
+	display: table;
+	clear: both;
+}
+#R{
+	max-width: 1200px;
+	min-width: 800px;
+	margin: auto;
+}
+header,footer{
+	border: 1px solid burlywood;
+	margin: 1% 0;
+	min-height: 120px;
+}
+footer{
+	float: left;
+}
+aside,main{
+	border: 1px solid burlywood;
+}
+section,aside,main{
+	min-height: 500px;
+}
+aside{
+	
+	width: 240px;
+	float: right;
+	min-height: 400px;
+}
+main{
+	width: auto;
+	margin-right: 250px;
+}
+p{
+	text-indent: 2em;
+	
+}
+header h1{
+	margin: 10px 14px;
+	text-align: center;
+}
+header ul{
+	list-style-type: none;
+	margin: 30px 0 0 14px;
+	padding: 0;
+	float:right;
+}
+header li{
+	float: right;
+}
+h2{
+	background: #bbb;
+}
+strong{
+	font-size: 2em;
+	color: darksalmon;
+}
+.t1:link,viaited {
+  	text-decoration: none;
+  	color: #cfc;
+ }
+.t1:hover {
+    color: #ccc;
+}
+.t1:active {
+  color: #000;
+}	
+.t2:link,viaited {
+  	text-decoration: none;
+  	color: goldenrod;
+ }
+.t2:hover {
+    color: #0f0;
+}
+.t2:active {
+  color: #000;
+}		
+	
