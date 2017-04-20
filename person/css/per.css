@@ -1,0 +1,100 @@
+*{
+	box-sizing: border-box;
+}
+.clearfix::after{
+	content: "";
+	display: table;
+	clear: both;
+	width: 0;
+	height: 0;
+	font-size: 0;
+}
+body{
+	padding: 0;
+	margin: 0;	
+	background: url(../img/1.jpg)fixed;
+	background-size: 100%;
+}
+#Menu{
+	height: 50px;
+	width: 100%;
+    position: fixed;
+	background-color: rgba(0,0,0,6);
+}
+nav ul{
+	list-style-type: none;
+	margin: 0px;
+	background: rgb(0,0,0);
+}
+.t1,.t2,.t3{
+     color: #FFFFFF;
+	width: 100px;
+	height: 40px;
+	margin: 5px 14px ;
+	padding: 5px;
+	float: right;
+	font-size: 20px;
+	text-align: center;
+	border-radius:5px;
+	text-decoration: none;
+}
+.t1:hover,.t2:hover,.t3:hover{
+	border-radius: 20px;
+}
+#Menu a:link,visited{
+	color: #000;
+	transition: all 1s;
+}
+#Menu a:hover{
+	color: #FF7F24;
+}
+#Menu a:active{
+	color: #adff2f;
+}
+header h1{
+	margin: 0;
+	text-align: center;
+	color:white ;
+	/*background-color: rgb(0,0,0);*/
+}
+ 
+#R{
+	max-width: 1200px;
+	min-width: 800px;
+	margin: auto;
+}
+header,footer{
+	border: 0px solid ;
+	margin: 1% 0;
+	height: 120px;
+}
+article{
+	border: 0px solid;
+	
+}
+/*article p{
+	font-size:30px ;
+}*/
+section,article{
+	min-height: 500px;
+}
+.a1,.a2{
+	width: 100px;
+	height: 100px;
+	margin: 10px 90px 0px;
+	float: right;
+	font-size: 20px;
+	text-align: center;
+	line-height: 40px;
+	border-radius: 0px;
+	transition: all 1s;
+} 
+.a1:hover,.a2:hover{
+	background-color:#ddd;
+	border-radius: 50px;
+	cursor: pointer;
+	}
+footer img{
+	width: 100px;
+	height: 100px;
+}
