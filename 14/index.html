@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<style>
+			body{
+				background: deepskyblue;
+			}
+			.f{
+				width:400px;
+				height: 300px;
+				position: absolute;
+				left:0 ;
+				right:0;
+				top:0;
+				bottom:0;
+				margin:auto;
+				background-color: white;
+				text-align: center;
+			}
+			.f h3{
+				text-align: center;
+				margin: 10px 0;
+			}
+			.f input{
+				width:75% ;
+				height:30px;
+				margin: 10px;
+				outline: none;
+				border: none;
+				text-indent: 1em;
+				border:1px dashed lightblue;
+				transition: all .5s;
+			}
+			.f input:hover{
+				border: 1px dashed lightblue;
+				box-shadow: inset 0px 0px 4px 0px rgba(0,0,0,.4);
+				transition:all .5s;
+			}
+			.f input[type="submit"]{
+				border:none;
+				width: 50%;
+				height: 40px;
+				left: 20%;
+				right: 20%;
+				bottom: -30px;
+				position: absolute;
+				text-indent: 0;
+				color: #FFFFFF;
+				background-color:blueviolet ;
+				letter-spacing: 0;
+				box-shadow: 0 3px rgba(50,50,100,.5);
+				cursor: pointer;
+				
+			}
+			.f input[type="submit"]:hover{
+				letter-spacing: 6px;
+				background-color:#000;
+			}
+		</style>
+	</head>
+	<body>
+		<form  action="#" class="f">
+			<h3>个人信息</h3>
+			<input type="text" name="name" id="name" placeholder="请输入姓名" />
+			<input type="text" name="age" id="age" placeholder="请输入年龄" />
+			<input type="email" name="email" id="email" placeholder="请输入邮箱" />
+			<input type="submit" name="submit" id="submit" value="提交信息" />
+		</form>
+	</body>
+</html>
