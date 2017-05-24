@@ -1,0 +1,201 @@
+*{
+	box-sizing: border-box;
+}
+.clearfix::after{
+	content: "";
+	display: table;
+	clear: both;
+}
+body{
+	background: url(../img/pexels-photo-260590.jpeg) no-repeat fixed;
+	background-size:cover;
+	/*min-width: 1200px;*/
+	min-height: 1200px;	
+	margin: auto;
+}
+header{
+	position: relative;
+	margin: 30px 0;
+}
+.wrapper{
+	max-width: 1200px;
+	padding: 20px;
+	margin: auto;
+}
+.logo img{
+	width: 80px;
+	height: auto;
+	cursor: pointer;
+}
+ul{
+	padding: 0;
+	list-style-type: none;
+}
+a{
+	text-decoration: none;
+	color: #FFFFFF;
+}
+nav{
+	position: absolute;
+	top: 0;
+	right: 0;
+}
+nav ul li{
+	float: left;
+	margin: 20px 30px;
+}
+nav ul li a{
+	text-decoration: none;
+	color: #fff;
+	padding: 20px;
+	border: 1px solid transparent;
+	transition: color .5s,border .5s;
+}
+nav ul li a:hover{
+	color: #000;
+	border: 1px solid #fff;
+}
+h1,h3{
+	color: #FFFFFF;
+	text-align: center;
+}
+h2{
+	color: #FFFFFF;
+}
+
+/*兴趣*/
+.xingqu ul li{
+	float: left;
+	width: 160px;
+	height: 50px;
+	line-height: 50px;
+	text-align: center;
+	background-color: rgba(100,100,200,.5);
+	border-radius: 0px;
+	margin: 10px 10px 10px 0px;
+	cursor: pointer;
+	transition: background-color .7s border-radius 1s;
+}
+.xingqu ul li:hover{
+	background-color: rgba(100,100,200,.8);
+	border-radius:10px;
+}
+/*闲暇一刻*/
+.rel{
+	padding: 0;
+	margin: 0;
+}
+.rel figure{	
+	width: 30%;
+	margin: calc(10% / 6) ;
+	float: left;
+	position: relative;
+}
+.rel figure:nth-child(3n){
+	margin-left: 0;
+	margin-right: 0px;
+}
+.rel figure figcaption{
+	width: 100%;
+	height: 30px;
+	color: #FFFFFF;
+	position: absolute;
+	z-index: 3;
+	margin: auto;
+	left: 0;
+	right: 0;
+	top: 0;
+	bottom: 0;
+	text-align: center;
+	opacity: 0;
+	transition: opacity .5s;
+}
+.rel figure img{
+	width: 100%;
+	height: auto;
+	-webkit-filter: grayscale(.5);
+	filter: grayscale(.5);
+	transition: webkit-filter .5s;
+	cursor: pointer;
+}
+.rel figure:hover figcaption{
+	opacity: 1;
+	font-size: 40px;
+}
+.rel figure:hover img{
+	-webkit-filter: grayscale(0);
+	filter: grayscale(0);
+}
+section h2{
+	margin-top:50px ;
+	margin-bottom:10px ;
+}
+/*联系我们*/
+.contactToUs p{
+	color: #FFFFFF;
+}
+.contact dt{
+	width: 80px;
+	height: 30px;
+	line-height: 30px;
+	color: #FFFFFF;
+	text-align: center;
+	background-color: #000000;
+	display: inline-block;
+}
+.contact dd{
+	padding:0 30px;
+	height: 30px;
+	line-height: 30px;
+	margin-left: 0;
+	margin-right: 50px;
+	color: #000000;
+	background-color: #FFFFFF;
+	text-align: center;
+	display: inline-block;
+}
+.contact input{
+	width: 31%;
+	height: 48px;
+	border: none;
+	border-radius: 5px;
+}
+.contact select{
+	width: 31%;
+	height: 48px;
+	border: none;
+	border-radius: 5px;
+	color: #666;
+}
+.contact textarea{
+	width: 46%;
+	height: 48px;
+	border: none;
+	border-radius: 5px;
+	margin: 30px 0;
+	margin-right: 20px;
+}
+.contact input[type="submit"]{
+	width: 46%;
+	height: 48px;
+	border: none;
+	border-radius: 5px;
+	margin: 30px 0;
+	background-color: #fdf;
+	vertical-align: top;
+}
+footer p{
+	color: #FFFFFF;
+}
+#goTop{
+	position: fixed;
+	right: 20px;
+	bottom: 20px;
+	border: 1px solid #fff;
+	width: 40px;
+	height: 40px;
+	text-align: center;
+	line-height: 40px;
+	font-size: 0.8em;
+	color: #fff;
+}
