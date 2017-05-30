@@ -1,0 +1,77 @@
+/*全局*/
+*{
+	box-sizing: border-box;
+}
+.clearfix:after{
+	content: "";
+	display: table;
+	clear: both;
+}
+body{
+	margin: 0;
+	padding: 0;
+}
+li{
+	list-style-type: none;
+}
+a{
+	color: white;
+	text-decoration: none;
+}
+.container{
+	max-width:1200px;
+	margin: auto;
+}
+/*头部*/
+header{
+	background-color: rgba(0,0,0,.1);
+	width: 100%;
+	padding: 20px 0;
+	position: fixed;
+}
+.logo{
+	float: left;
+}
+.logo img,
+.logo span{
+	vertical-align: middle;
+}
+.logo span{
+	font-size:3.5em ;
+	font-family: 'Dancing Script', cursive;
+}
+.menu{
+	float: right;
+    margin-top: 5px;  	
+}
+.menu ul{
+	
+}
+.menu ul li{
+	float: left;
+	margin:0 30px;
+}
+.menu ul li a{
+	color: #FFFFFF;
+	text-shadow: 1px 1px 3px  rgba(0,0,0,.5);
+}
+.menu ul li a:hover{
+  color: #339BEB;
+}
+/*首页*/
+#banner{
+	background-image: url(../img/banner.jpg) no-repeat center top ;
+	background-size: 100%;
+    height: 800px;
+}
+.words{
+	text-align: center;
+	color: #FFFFFF;
+}
+.words span{
+	color: #339BEB;
+}
+.words em{
+	color: #000000;
+}
+
