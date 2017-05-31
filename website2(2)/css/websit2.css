@@ -1,0 +1,106 @@
+/*全局*/
+*{
+	box-sizing: border-box;
+}
+.clearfix:after{
+	content: "";
+	display: table;
+	clear: both;
+}
+body{
+	margin: 0;
+	padding: 0;
+	font-family: "微软雅黑";
+}
+li{
+	list-style-type: none;
+}
+a{
+	color: white;
+	text-decoration: none;
+}
+.container{
+	max-width:1200px;
+	margin: auto;
+}
+/*头部*/
+header{
+	background-color: rgba(0,0,0,.01);
+	width: 100%;
+	padding: 20px 0;
+	z-index: 999;
+	position: fixed;
+	top: 0;
+	left: 0;
+	transition: all .5s;
+}
+header.on{
+	padding: 5px 0;
+	background-color: rgba(0,0,0,.8);
+}
+.logo{
+	float: left;
+}
+.logo img,
+.logo span{
+	vertical-align: middle;
+}
+.logo span{
+	font-size:3.5em ;
+	font-family: 'Dancing Script', cursive;
+}
+.menu{
+	float: right;
+    margin-top: 5px;  	
+}
+.menu ul{
+	
+}
+.menu ul li{
+	float: left;
+	margin:0 30px;
+}
+.menu ul li a{
+	color: #FFFFFF;
+	text-shadow: 1px 1px 3px  rgba(0,0,0,.5);
+}
+.menu ul li a:hover{
+  color: #339BEB;
+}
+/*首页*/
+.banner{
+    min-height: 800px;
+    background: url(../img/banner.jpg) no-repeat center top;
+	background-size: cover;
+}
+.banner .container{
+	width: 800px;
+	height: 300px;
+	margin: auto;
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+}
+.words{
+	padding: 5px;
+	color: #FFFFFF;
+	text-shadow: 1px 1px 3px  rgba(0,0,0,.5);
+	line-height: 1.5;
+}
+.words h1{
+	text-align: center;
+}
+.words h1 strong{
+	color: #339BEB;
+}
+.words p mark{
+	background-color: rgba(255,255,255,.5);
+    padding: 5px;
+}
+/*关于*/
+.about{
+	background-color: #FFFFFF;
+	min-height: 800px;
+}
