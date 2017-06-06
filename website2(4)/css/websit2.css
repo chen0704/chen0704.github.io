@@ -157,10 +157,10 @@ header.on{
 	background: url(../img/desktop.jpg) no-repeat center center;
 	background-size: cover;
 	min-height: 800px;
-	position: relative;
-	
+	position: relative;	
 }
 .service .container{
+	position: relative;
 	z-index: 2;
 }
 .service::after{
