@@ -3,13 +3,14 @@
 	<head>
 		<meta charset="utf-8" />
 		<title>傲慢与偏见</title>
-		<link rel="stylesheet" href="css/a.css" />
+		<link rel="stylesheet" href="css/js01.css" />
 	</head>
 	<body>
+		<a id="big" href="javascript:">大</a>&nbsp;<a id="small" href="javascript:">小</a>
 		<div id="A">
-		<header>
+		<header>			
 			<h1>傲慢与偏见</h1>
-				<ul>
+				<ul class="clearfix">
 					<li><a href="">作者：简·奥斯汀</a></li>
 				</ul>
 			</header>
@@ -31,5 +32,19 @@
 		</section>
 		<footer><p>简·奥斯汀(Jane Austen 1775年12月16日～1817年7月18日)英国女小说家。生于乡村小镇斯蒂文顿，父亲是当地教区牧师。奥斯汀没有上过正规学校，但受到较好的家庭教育，主要教材就是父亲的文学藏书。奥斯汀一家爱读流行小说，多半是庸俗的消遣品。她少女时期的习作就是对这类流行小说的滑稽模仿，这样就形成了她作品中嘲讽的基调。她20岁左右开始写作，共发表了6部长篇小说。1811年出版的《理智与情感》是她的处女作，随后又接连发表了《傲慢与偏见》(1813)、《曼斯菲尔德花园》(1814)和《爱玛》(也译《艾玛》)(1815)。《诺桑觉寺》(又名《诺桑觉修道院》)和《劝导》(1818)是在她去世后第二年发表的，并署上了作者真名。</p> </footer>
 		</div>
+		<script type="text/javascript">
+			var A = document.getElementById("A");
+			var big = document.getElementById("big");
+			var small = document.getElementById("small");
+			var i = 14;
+			big.onclick = function(){
+				i += 2;
+				A.style.fontSize = i+'px';
+			}
+			small.onclick = function(){
+				i -= 2;
+				A.style.fontSize = i+'px';
+			}
+		</script>
 	</body>
 </html>
