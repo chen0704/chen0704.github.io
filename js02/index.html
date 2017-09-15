@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>网页换肤</title>
+		<link id="link" rel="stylesheet" type="text/css" href="css/css1.css"/>
+	</head>
+	<body>
+		
+			<a id="a1" href="javascript:">皮肤1</a>&nbsp;<a id="a2" href="javascript:">皮肤2</a>&nbsp;<a id="big" href="javascript:">大</a>&nbsp;<a id="small" href="javascript:">小</a>
+			<div id="A">
+				<h1>Cat</h1>
+				<p>——猫作为性情温顺，聪明活泼的动物。</p>
+				<h3>贪睡</h3>
+				<p>关于睡觉状态，猫咪在一天中有14～15小时在睡眠中度过，还有的猫，要睡20小时以上，所以猫就被称为“懒猫”。但是，要仔细观察猫睡觉的样子就会发现，只要有点声响，猫的耳朵就会动，有人走近的话，猫就会腾地一下子醒来。本来猫是狩猎动物，为了能敏锐地感觉到外界的一切动静，它睡得不是很死，所以不应该称之为“懒”，因为猫只有4～5小时是真睡，大多数时间应该算是在“假寐”或者叫做闭目养神。但从小和人类待惯的猫睡的比较死，睡的时间比较长。</p>
+				<h3>任性</h3>
+				<p>猫显得有些任性，我行我素。本来猫是喜欢单独行动的动物，不像狗一样，听从主人的命令，集体行动。因而它不将主人视为君主，唯命是从。有时候，你怎么叫它，它都当没听见。猫和主人并不是主从关系，把它们看成平等的朋友关系会更好一些。也正是这种关系，才显得独具魅力。另一方面猫把主人看作父母，像小孩一样爱撒娇，它觉得寂寞时会爬上主人的膝盖，或者随地跳到摊开的报纸上坐着，尽显娇态。</p>
+				<h3>洁癖</h3>
+				<p>猫经常清理自己的毛。小猫在很多时候，爱舔身子，自我清洁。饭后猫会用前爪擦擦胡子，被人抱后用舌头舔舔毛。这是猫的本能，去除自己身上的异味以躲避捕食者的追踪。猫的舌头上有许多粗糙的小突起，这是除去脏污最合适不过的工具。</p>
+				<p>在主人抚摩猫以后，猫舔自己被抚摩的地方：猫在记忆人的味道，因为它担心与主人分开后找不到主人。许多人误认为这是猫嫌自己脏。</p>
+				<h3>情绪</h3>
+				<p>猫在高兴时，尾巴会竖起来，或者发出呼噜呼噜的声音。猫生气的时候，会使劲地摇尾巴。如果你惹它生气了，它有可能会猛地扑向你。</p>
+			</div>
+			<script type="text/javascript">
+				var a1=document.getElementById('a1');
+				var a2=document.getElementById('a2');
+				var lk=document.getElementById('link');
+				var A=document.getElementById('A');
+				var big=document.getElementById('big');
+				var small=document.getElementById('small');
+				var i=12;
+				a1.onclick=function(){
+					lk.href="css/css1.css";
+				}
+				a2.onclick=function(){
+					lk.href="css/css2.css";
+				}
+				big.onclick=function(){
+				i+=2;
+				A.style.fontSize=i+'px';
+				}
+				small.onclick=function(){
+					i-=2;
+					A.style.fontSize=i+'px';
+				}
+			</script>		
+	</body>
+</html>
