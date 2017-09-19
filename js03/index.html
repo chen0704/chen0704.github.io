@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8" />
+		<title>Banner</title>
+		<style type="text/css">
+			body{
+				background:rgba(0,0,0,0.2);
+			}
+			#banner{
+				width:1000px;
+				height: 667px;
+				margin: 0 auto;	
+				text-indent: -999em;
+				border-radius: 500px;
+			}
+	</style>
+	</head>
+	<body>
+		<div id="banner"></div>
+		<script type="text/javascript">	
+			var imgStr="1.jpeg|2.jpeg|3.jpeg|4.jpeg|5.jpeg";
+			var lStr=imgStr.split("|");
+			var oBanner=document.getElementById('banner');
+			var num=parseInt(Math.random()*5);
+			oBanner.style.backgroundImage="url(img/"+lStr[num]+")";			
+		</script>
+</body>
+</html>
