@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>打字练习</title>
+		<style type="text/css">
+			body{
+				margin: 0;
+				padding: 0;
+				background: url(img/timg.jpg) no-repeat fixed;
+				background-size: cover;
+			}
+			.test{
+				width: 800px;
+				min-height:500px;
+				/*border: 2px solid #fff;*/
+				margin: 0 auto;
+			}
+			.title{
+				text-align: center;
+				font-family: "微软雅黑";
+			}
+			.text{
+				text-indent: 2em;
+			}
+			h1{
+				color: #000;
+			}
+			h3{
+				line-height: 2em;
+				color: #ffd;
+			}
+		</style>
+	</head>
+	<body>
+	    <div class="test">
+	    	<h1 class="title">飞屋历险记</h1>
+		  	<h3 class="text">已经78岁的气球销售员卡尔·弗雷德里克森自小就迷恋探险故事，曾经希望能成为伟大的探险家。当他还是一个孩子，遇到了有着同样梦想的女孩艾丽，他们一块长大并结婚相伴到老。卡尔与老伴艾丽拥有共同的愿望——去南美洲失落的“天堂瀑布”探险。然而，老伴的去世让原本不善言的卡尔变得性格怪僻，更加的沉默寡言起来。这时候，政府计划要在卡尔所住的地方重新建造，而卡尔不愿意离开拥有和妻子美好记忆的屋子。正当政府打算将他送到养老院时，他决定实现他和他妻子毕生的愿望。不过，他并不是打算一个人去，而是和他的屋子一起去，因为卡尔在屋顶上系上成千上万个五颜六色的氢气球。当遮掩气球的帐篷掀开时，色彩斑斓的气球全部腾飞起来，将卡尔的屋子平地拨起并共同飞向空中。正当他独自享受这伟大之旅时，突然传来一阵敲门声，结果他发现他最大的“恶梦”就在屋外——一个过分乐观，自称为“荒野探险家”的8岁小男孩罗素。但一切已为时已晚，卡尔不得不带上小男孩一起踏上这惊险刺激的探险之旅。</h3>
+	        
+	    </div>
+		
+		<script type="text/javascript">
+			var oH1=document.querySelector(".title");
+			var oH3=document.querySelector(".text");
+			
+			//文本，速度，循环
+			function typeText(ele,speed,loop){
+				var oTitle=ele;
+				var str=oTitle.innerText;
+				var i=0;
+				var loop=loop||false;
+				oTitle.innerText="";
+				//判断
+				var a=setInterval(function () {
+					if(i<str.length){
+						oTitle.innerText+=str[i];
+					}else{
+						if(loop){
+						i=-1;
+						oTitle.innerText="";
+						}else{
+							clearInterval(a);
+						}
+					}i++;
+				},speed);
+			}
+			typeText(oH1,100);//h1不重复执行
+			typeText(oH3,200,true);//h2重复
+		</script>
+	</body>
+</html>
