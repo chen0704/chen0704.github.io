@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>单击测试</title>
+		<style type="text/css">
+			body{
+				background-color:#efb;
+			}
+			.title{
+				text-align: center;
+				line-height: 50px;
+				width: 500px;
+				height: 100px;
+				border:3px solid #fff;
+                background-color: rgba(0,0,0,0.6);
+                color: #FFFFFF;				
+				margin: 0 auto;
+			}
+			.key{
+				width: 1350px;
+				margin: 100px auto;
+			}
+			input[type="button"]{
+				margin: 10px;
+				width: 200px;
+				height: 100px;
+				background:rgba(0,0,0,0.6);
+				color: #fff;
+				font-size: 2em;
+				cursor: pointer;
+			}
+			input[type="button"]:hover{
+				background-color: white;
+				color: black;
+			}
+		</style>
+	</head>
+	<body>
+		<!--连连看效果:https://codepen.io/natewiley/pen/HBrbL
+			游戏效果：https://codepen.io/Chase_Wu/pen/BQmgXM
+		-->
+		<div class="title">
+			<h2>请选择你的心情</h2>
+		</div>
+		<div class="key">
+			<input type="button" value="Sad" />
+			<input type="button" value="Happy" />
+			<input type="button" value="Angry" />
+			<input type="button" value="Gloomy" />
+			<input type="button" value="Afraid" />
+			<input type="button" value="Boring" />
+		</div>
+		<script type="text/javascript">
+			//先获取全部的按钮
+			var oBtn=document.querySelectorAll(".key input");
+			for(var i=0;i<oBtn.length;i++){
+				//事件监听（单击）,闭包
+				oBtn[i].addEventListener("click",function(press){
+					return function(e){
+//						console.log("你单击了第"+press+"个按钮");//控制台输出
+						alert("你选择了第"+press+"个按钮，它代表了你此刻的心情");//window对话框跳出
+					};
+				}(i+1));
+			}
+		</script>
+	</body>
+</html>
