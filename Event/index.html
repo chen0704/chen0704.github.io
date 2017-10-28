@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	<meta charset="utf-8" />
+	<title>登录界面</title>
+	<style type="text/css">
+		*{
+			box-sizing: border-box;
+			margin: 0;
+			padding: 0;
+		}
+		body{
+			background-color: #50a3a2;
+			font-family: "微软雅黑";
+			color: lightblue;
+			font-weight: 300;
+		}
+		.wrapper{
+			position: absolute;
+			top: 50%;
+			left: 0;
+			width: 100%;
+			height: 400px;
+			margin-top: -200px;
+			overflow: hidden;
+		}
+		.container{
+			max-width: 600px;
+			margin: 0 auto;
+			padding: 80px 0;
+			height: 400px;
+			text-align: center;
+		}
+		h1{
+			font-size: 40px;
+			font-weight: 200px;
+			margin-bottom: 10px;
+		}
+		form{
+			padding: 20px 0;
+			position: relative;
+			z-index: 2;
+	    }
+		.from input{
+			display: block;
+			appearance: none;
+			outline: 0;
+			border: 1px solid fade(white, 40%);
+			background-color: fade(white, 20%);
+			width: 250px;
+			
+			border-radius: 3px;
+			padding: 10px 15px;
+			margin: 0 auto 10px auto;
+			display: block;
+			text-align: center;
+			font-size: 18px;
+			
+			color: black;
+			
+			transition-duration: 0.25s;
+			font-weight: 300;
+		}
+		.from input[type=submit]{
+			appearance: none;
+			outline: 0;
+			background-color: white;
+			border: 0;
+			padding: 10px 15px;
+			color: #50a3a2;
+			border-radius: 3px;
+			width: 250px;
+			cursor: pointer;
+			font-size: 18px;
+			transition-duration: 0.25s;
+		}	
+		input:hover{
+			background-color: rgb(245, 247, 249);
+		}
+	</style>
+	</head>
+	<body>
+		<div class="wrapper">
+			<div class="container">
+				<h1>Welcome</h1>
+				
+				<from class="from">
+					<input type="text" placeholder="Username" id="username"/>
+					<input type="password" placeholder="Password" id="password"/>						
+					<input type="submit" value="Login" id="login"/>				
+				</from>
+			</div>
+		</div>
+	<script type="text/javascript">
+		//先获取定义
+		var oUsername=document.getElementById("username");
+		var oPassword=document.getElementById("password");
+		var oLogin=document.getElementById("login");
+		
+		//键盘事件，获取username/password的内容
+		document.onkeydown=function(event){
+	        var event=event||window.event;
+	        document.getElementById("username").innerHTML=event.keyCode;  
+	        document.getElementById("password").innerHTML=event.keyCode; 
+       }
+		//鼠标事件，判断oUsername，oPassword不为空的时候，单击oLoign按钮才能执行
+		oLogin.addEventListener("click",function () {
+			if(oUsername.value!=""&&oPassword.value!=""){
+				window.open("https://github.com/chen0704");	
+			}
+			else
+			alert("请输入用户名及密码.");
+		});		
+	</script>
+	</body>
+</html>
