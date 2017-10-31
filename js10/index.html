@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>放大镜效果</title>
+		<style>
+		* {
+			box-sizing: border-box;
+		}
+		body{
+			background-color:black;
+		}
+		.zoom {
+			width: 600px;
+			overflow: hidden;
+			margin:auto;
+			position: relative;
+			border-radius: 20px;
+		}
+			
+		.zoom img {
+			width: 600px;
+			border-radius: 20px;
+			transition: all 1s;
+		}
+			
+		.zoomer {			
+			position: absolute;
+			width: 100px;
+			height: 100px;
+			left: 0;
+			top: 0;
+			margin: -50px 0 0 -50px;
+			background-repeat: no-repeat;
+			/*border-radius: 50%;*/
+			border-radius: 20px;
+			border: solid 3px #000;
+			opacity: 0;
+			transform: scale(0);
+			transition: transform .3s, alpha .3s;
+			pointer-events: none;//取消延迟
+		}
+			
+		.zoom:hover .zoomer {
+			transform: scale(1);
+			opacity: 1;
+		}
+		#text{
+			margin:auto;
+			text-align: center;
+			width: 600px;
+			height: 20px;
+			color: #fff;
+		}
+		</style>
+	</head>
+	<body>
+		<figure class="zoom">
+			<img src="img/img.jpeg" />
+			<div class="zoomer"></div>			
+		</figure>
+		<div id="text"></div>
+		<script>
+		 var zoom=document.querySelector(".zoom");
+		 var zoomer=zoom.querySelector(".zoomer");
+		 var img=zoom.querySelector("img");
+		 var text=document.getElementById("text");
+		 var ration;
+		 		 
+		 img.addEventListener("load",onLoad);
+		 img.addEventListener("mousemove",onMousemove);
+		 
+		 //鼠标移动时
+		 function onMousemove(){
+		  	Itop=event.offsetY||event.layerY;
+		 	Ileft=event.offsetX||event.layerX;
+		  	zoomer.style.top=Itop+'px';
+		  	zoomer.style.left=Ileft+'px';
+		  	//zoomer.style.backgroundPosition=(-Ileft*ration+125)+"px"+(-Itop*ration+125)+"px";//position的 坐标x y之间有空格，
+		  	zoomer.style.backgroundPosition=(-Ileft*ration+50)+"px "+(-Itop*ration+50)+"px";
+		  	text.innerHTML=parseInt((Ileft * ration + 50)) + "px " + " " + parseInt((Itop * ration + 50)) + "px ";
+		  	
+		 }
+		 //加载时
+		 function onLoad(){
+		 	//naturalWidth 真实图片宽度          naturalHeight 真实图片高度 
+			ration=img.naturalWidth/img.width;
+		 	zoomer.style.backgroundImage='url('+img.src+')';
+		 }
+		</script>
+	</body>
+</html>
