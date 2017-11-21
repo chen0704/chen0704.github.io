@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>表格内搜索</title>
+		<style type="text/css">
+			body{
+				margin: 0;
+				padding: 0;
+			}
+			.add{
+				width: 800px;
+				height: 50px;
+				margin: 0 auto;
+				text-align: center;
+			}
+			table{
+				width: 800px;
+				height: 50px;
+				margin: 0 auto;
+				border: 1px solid #000;
+				background-color: #DDFFDD;
+			}
+			td,th{
+				width: 100px;
+				text-align: center;
+			}
+		</style>
+
+	</head>
+	<body>
+		<div class="add">
+			姓名：<input type="text" name="name" id="name" value="" />
+			年龄： <input type="text" name="age" id="age" value="" />
+			<input type="button" id="but1" value="添加" />
+		</div>		
+		<table id="tab1" border="1" cellspacing="0" cellpadding="1">
+			<thead>
+				<tr>
+					<th>ID</th>
+					<th>Name</th>
+					<th>Age</th>
+					<th>操作</th>
+				</tr>
+			</thead>
+				<tr>
+					<td>1</td>
+					<td>张三</td>
+					<td>18</td>
+					<td></td>
+					
+				</tr>				
+				<tr>
+					<td>2</td>
+					<td>李四</td>
+					<td>19</td>
+					<td></td>
+				</tr>
+				<tr>
+					<td>3</td>
+					<td>王五</td>
+					<td>20</td>
+					<td></td>
+				</tr>
+				<tr>
+					<td>4</td>
+					<td>赵六</td>
+					<td>21</td>
+					<td></td>
+				</tr>
+				<tr>
+					<td>5</td>
+					<td>韩七</td>
+					<td>22</td>
+					<td></td>
+				</tr>
+				
+		</table>
+		
+		<script type="text/javascript">
+			window.onload=function (){
+				var oTab=document.getElementById("tab1");
+				var oBut=document.getElementById("but1");
+				var oName=document.getElementById("name");
+				var oAge=document.getElementById("age");
+				var id=oTab.tBodies[0].rows.length+1;
+				
+				oBut.onclick=function (){
+					var oTr=document.createElement("tr");
+					
+					var oTd=document.createElement("td");
+					oTd.innerHTML=id++;
+					oTr.appendChild(oTd);
+					
+					var oTd=document.createElement("td");
+					oTd.innerHTML=oName.value;
+					oTr.appendChild(oTd);
+					
+					var oTd=document.createElement("td");
+					oTd.innerHTML=oAge.value;
+					oTr.appendChild(oTd);
+					
+					var oTd=document.createElement("td");
+					oTd.innerHTML='<a href="javascript:;">删除</a>';
+					oTr.appendChild(oTd);
+					
+					oTd.getElementsByTagName('a')[0].onclick=function (){
+						oTab.tBodies[0].removeChild(this.parentNode.parentNode);
+					}
+					
+					oTab.tBodies[0].appendChild(oTr);
+				}
+			}
+		</script>
+	</body>
+</html>
