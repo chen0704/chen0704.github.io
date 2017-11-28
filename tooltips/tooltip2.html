@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<style type="text/css">
+		body{
+			background: url(img/banner.jpg) no-repeat;
+			background-size: cover;
+			margin: 0;
+			padding: 0;
+		}
+		a{
+			text-decoration: none;
+			color: #fff;
+			font-size: 15px;
+		}
+		.container{
+			width: 800px;
+			margin: 0 auto;
+		}
+		.container h1{
+			font-size: 50px;
+			text-align: center;
+		}
+		.container p{
+			margin: 40px;
+			color: #fff;
+			font: "微软雅黑";
+			font-size: 15px;
+		}
+		.tooltip{
+			position: relative;
+		}
+		.tooltip span{
+			width: 300px;
+			padding: 5px 10px;
+			color: #fff;
+			background: #000;
+			text-align: center;
+			border-radius: 2px;
+			position: absolute;
+			left: 0px;
+			top: -40px;
+			opacity: 0;
+			visibility: hidden;
+			transition: .5s;
+		}
+		.tooltip span::after{
+			content: "";
+			width: 0;
+			height: 0;
+			position: absolute;
+			/*top: 100%;
+			left: 50%;
+			margin-left: -8px;
+			border-top: 8px solid #000;
+			border-right: 8px solid transparent;
+			border-left: 8px solid transparent;*/
+		}
+		.tooltip[data-direction = "top"] span{
+			left: -90px;
+			top: -38px;
+		}
+		.tooltip[data-direction = "top"] span::after{
+			top: 100%;
+			left: 50%;
+			margin-left: -8px;
+			border-top: 8px solid black;
+  			border-right: 8px solid transparent;
+  			border-left: 8px solid transparent;
+		}
+
+		.tooltip[data-direction="right"] span{
+			left: 720px;
+			top: 0px;
+		}
+		.tooltip[data-direction="right"] span::after{
+		  	top: 50%;
+			left: -8px;
+			margin-top: -8px;
+			border-right: 8px solid black;
+			border-top: 8px solid transparent;
+			border-bottom: 8px solid transparent;
+		}
+		#four[data-direction="right"] span{
+			left: 120px;
+			top: 0px;
+		}
+		#four[data-direction="right"] span::after{
+		  	top: 50%;
+			left: -8px;
+			margin-top: -8px;
+			border-right: 8px solid black;
+			border-top: 8px solid transparent;
+			border-bottom: 8px solid transparent;
+		}
+		.tooltip[data-direction="bottom"] span{
+			left: -90px;
+			top: 38px;
+		}
+		.tooltip[data-direction="bottom"] span::after{
+			bottom: 100%;
+			left: 50%;
+  			margin-left: -8px;
+  			border-bottom: 8px solid black;
+  			border-right: 8px solid transparent;
+  			border-left: 8px solid transparent;
+		}
+		#six[data-direction="right"] span{
+			left: 40px;
+			top: 0px;
+		}
+		#six[data-direction="right"] span::after{
+		  	top: 50%;
+			left: -8px;
+			margin-top: -8px;
+			border-right: 8px solid black;
+			border-top: 8px solid transparent;
+			border-bottom: 8px solid transparent;
+		}
+		.tooltip span.show{
+			opacity: 1;
+			visibility: visible;
+		}
+	</style>
+	<body>
+		<div class="container">
+			<h1>飞屋环游记</h1>
+			<p>1.<a href="#" id="one" class="tooltip" data-direction="top" data-content="她的宝宝需要她 咱们要护送她去团聚。">Since I have said that, I can see how you would think that.</a></p>
+			<p>2.<a href="#" id="two" class="tooltip" data-direction="top" data-content="天堂瀑布 被时间遗忘的地方。">And park it right next to the falls.</a></p>
+			<p>3.<a href="#" id="three" class="tooltip" data-direction="right" data-content="幸福，不是长生不老，不是大鱼大肉，不是权倾朝野。幸福是每一个微小的生活愿望达成。当你想吃的时候有得吃，想被爱的时候有人来爱你。">Happiness is not about being immortal nor having food or rights in one's hand. It’s about having each tiny wish come true, or having something to eat when you are hungry or having someone's love when you need love.</a></p>
+			<p>4.<a href="#" id="four" class="tooltip" data-direction="right" data-content="受困于，无法摆脱">Be stuck with</a></p>
+			<p>5.<a href="#" id="five" class="tooltip" data-direction="bottom" data-content="不论您做出何等努力，都会受困于最初的设计。">No matter what you do, you are stuck with the original design.</a></p>
+			<p ><a href="http://www.iqiyi.com/v_19rrlhvcdw.html?vfm=2008_aldbd&fc=828fb30b722f3164&fv=p_02_01" id="six" class="tooltip" data-direction="right" data-content="前点击">视频</a></p>
+		</div>		
+	</body>
+	<script type="text/javascript">
+		//获取
+		var tips=document.querySelectorAll(".tooltip");
+		if(tips.length==0){
+			console.log("没有提示");
+		}else{
+			//初始化
+			for(var i=0;i<tips.length;i++){
+				var content=document.createElement("span");
+				var data=tips[i].hasAttribute("data-content")?tips[i].getAttribute("data-content"):"提示为空";
+				var dir=tips[i].hasAttribute('data-direction')?tips[i].getAttribute('data-direction'):"right";
+				content.innerHTML=data;
+				tips[i].appendChild(content);
+				//监听
+				tips[i].addEventListener("mouseover",mouseoverHandler);
+				tips[i].addEventListener("mouseout",mouseoutHandler);
+			}
+		}
+		//执行函数
+		function mouseoverHandler(){
+			var event=event||window.event;
+			var target=event.target||event.srcElement;
+			var targetSpan=target.getElementsByTagName("span")[0];
+			targetSpan.classList.add("show");
+			
+		}
+		function mouseoutHandler(){
+			var event=event||window.event;
+			var target=event.target||event.srcElement;
+			var targetSpan=target.getElementsByTagName("span")[0];
+			targetSpan.classList.remove("show");
+		}
+	</script>
+</html>
