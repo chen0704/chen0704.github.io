@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			body{
+				margin: 0;
+				padding: 0;
+				background-color: #fdf;
+			}
+			.container{
+				width: 100%;
+				min-height: 100%;
+				
+			}
+			button{
+				background-color: #000;
+				color: #fff;
+			}
+			.text{
+				width: 80%;
+				min-height: 600px;
+				margin: 0 auto;
+			}
+			.text h2{
+				text-align: center;
+			}
+			.text p{
+				text-indent: 2em;
+				font-size: 15px;
+			}
+			[data-theme='blue']{
+				background-image: url(img/03.jpg);
+				background-size: 100%;
+				color: darkgoldenrod;
+				border: 4px solid #8C9C47;
+			}
+			[data-theme='green']{
+				background-image: url(img/02.jpg);
+				background-size: 100%;
+				color: #fff;
+				border: 4px solid #ECC60D;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="container">
+			<button id="blue">模式一</button>
+			<button id="green">模式二</button>
+			<div class="text">
+				<h2>阿里巴巴董事局主席马云：机器不可能超越人类</h2>
+				<p>对新技术与其担心，不如担当：这几年，全球弥漫着一种对新技术时代和技术的担心之中，担心机器会抢走工作机会，担心机器会控制人类，担心人类会毁灭在自己最伟大的发明之中。清朝时期抵制铁路，担心沿线挑夫会失业，影响社会稳定，但是现在就有200多万的铁路工人。所以与其担心、不如担当，与其担心技术夺走就业，不如拥抱技术，去解决新的问题。</p>
+				<p>未来要让机器更像机器、人更像人：过去30年，我们把人变成了机器，未来30年，我们将把机器变成人，但最终应该让机器更像机器、人更像人。</p>
+				<p>人类有灵魂、有信仰、要自信可以控制机器：机器没有灵魂、机器没有信仰，我们人类有灵魂、有信仰、有价值观、有独特的创造力，人类要有自信、相信我们可以控制机器。</p>
+				<p>人类将会从事更有创意、更有创造力的工作：未来机器学习、人工智能一定会取代大部分机械的工作，而人类将会从事更有创意、更有创造力、更有体验的工作，服务业一定会成为未来就业的主要来源。</p>
+			</div>
+		</div>
+		
+		<script type="text/javascript">
+			var oBlue=document.getElementById("blue");
+			var oGreen=document.getElementById("green");
+			var oText=document.querySelector(".text");
+
+			var curTheme=localStorage.getItem("theme");
+			
+			if(curTheme!=null){
+				oText.dataset.theme=curTheme;
+			}//可以保留样式，刷新页面之后还是在的
+			localStorage.clear();//清除样式
+			//按钮单击，监听
+			oBlue.addEventListener("click",setTheme);
+			oGreen.addEventListener("click",setTheme);
+			//执行函数
+			function setTheme(){
+				var target=event.target;
+				var id=target.id;
+				console.log(id);
+				oText.dataset.theme=id;
+				localStorage.setItem("theme",id);
+			}
+		</script>
+	</body>
+</html>
