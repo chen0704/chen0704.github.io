@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<script src="js/intense.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/intense.js" type="text/javascript" charset="utf-8"></script>
+		<style type="text/css">
+			body{
+				margin: 0;
+				padding: 0;
+				background-image: url(img/banner.jpeg);
+				background-size: cover;
+				width: 100%;
+				height: 100%;
+			}
+			header h1{
+				text-align: center;
+				margin: 50px 0;
+			}
+			.container{
+				width: 1200px;
+				min-height:400px;
+				margin:0 auto;
+				border: 2px dashed #000;
+				background-color: rgba(255,255,255,.8);
+			}
+			.container img{
+				border: 2px dashed #000;				
+				margin: 5% 0 5% 6%;
+				cursor: url("img/plus_cursor.png") 25 25, auto;
+			  	display: inline-block;
+			  	width: 300px;
+			  	height: 300px;	
+			    border-radius: 150px;		 
+			  	background-size: cover;
+			 	background-position: 50% 50%;
+			}
+			.demo-image.first {
+			    background-image: url("img/h1_small.jpg"); 
+			}
+			.demo-image.second {
+			    background-position: 50% 10%;
+			    background-image: url("img/2.jpeg");
+			}
+			.demo-image.third {
+			    background-image: url("img/3.jpeg"); 
+			}
+		</style>
+	</head>
+	<body>
+		<header>
+			<h1>Intense-Image</h1>
+		</header>
+		<div class="container">
+			<img class="demo-image first"   data-image="img/h1_small.jpg"/>
+			<img class="demo-image second"  data-image="img/2.jpeg"/>
+			<img class="demo-image third"  	data-image="img/3.jpeg"/>
+		</div>
+		<script>
+			window.onload=function(){
+				var element=document.querySelectorAll('img');
+				Intense(element);
+			}
+		</script>
+	</body>
+</html>
