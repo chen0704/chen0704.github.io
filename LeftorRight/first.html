@@ -1,0 +1,43 @@
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>欢迎来到左右脑测试</title>
+		<style type="text/css">
+			body{
+				/*background: -webkit-linear-gradient(left, rgba(0,0,0,.8) , rgba(0,0,120,.8) );*/
+				background: url(img/timg.jpg) no-repeat;
+				background-size: cover;
+			}
+			p{
+				width: 1200px;
+				text-align: center;
+				font-size: 50px;
+				line-height: 100px;
+				position: absolute;
+				left: 50%;
+				top: 40%;
+				transform: translate(-50%,-50%);
+				color: #ccc;
+				text-shadow: 6px 6px 10px rgba(0,0,0,8);
+				opacity: 0;
+				transition: opacity 5s;				
+			}
+		</style>
+	</head>
+	<body onload="come()">
+		<p class="text">人的左脑可称为“学术脑”，右脑又称为“艺术脑”。<br/>进入测试，看看自己的大脑优势在哪吧！</p>
+		<script type="text/javascript">
+			var oText=document.querySelector(".text");	
+			
+			function come () {
+				oText.style.opacity=1;
+			}
+			setTimeout(function(){				
+				window.location.href="second.html";
+				var clear=clearTimeout();
+			},5000);
+		</script>
+	</body>
+</html>
