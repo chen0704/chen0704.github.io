@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<link href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+		<style type="text/css">
+			*{
+				box-sizing: border-box;
+			}
+			#app{
+				width: 500px;
+				max-height: 500px;
+				position: absolute;
+				left: 0;
+				right: 0;
+				top: 0;
+				bottom: 0;
+				margin: auto;
+				overflow: hidden;
+				box-shadow: 0px 0px 6px rgba(0,0,0,.6);
+				padding: 30px;
+				background-color: #ff6666;
+				border: 10px solid #eeeeee;
+			}
+			#app header{
+				color: #fff;
+				border-bottom: 1px solid #fff;
+			}
+			#app header h1{
+				margin: 0;
+			}
+			#app input{
+				width: 100%;
+				border: none;
+				outline: none;
+				padding: 1rem;
+			}
+			#app ul{
+				margin: 0;
+				padding: 0;
+			}
+			#app li{
+				list-style-type: none;
+				background-color: rgba(255,255,255,.5);
+				margin: .3rem 0;
+				padding: 0.5rem;
+				vertical-align: middle;
+			}
+			#app li .fa{
+				float: right;
+			}
+		</style>
+	</head>
+	<body>
+		<script src="https://cdn.jsdelivr.net/npm/vue"></script>
+		<div id="app">
+			<header>
+				<h1>备忘录</h1>
+				<p>利用vue实现的简单备忘录</p>
+			</header>
+			<input type="text" v-model="NewTodo" @keyup.enter="addTodo" placeholder="添加事项"/>
+			<ul>
+				<li v-for="(item,index) in todos" :class="{'done':item.done}">
+					{{"第"+(index+1)+"件需要做的事："+item.content}}				
+					<i @click="remove(index)" class="fa fa-close" aria-hidden="true"></i>
+					<i v-if="!item.done" @click="redone(index)" class="fa fa-check" aria-hidden="true"></i>
+				</li>
+			</ul>
+			
+		</div>
+		<script type="text/javascript">
+			var app=new Vue({
+				el:"#app",
+				data:{					
+					todos:[{
+							id:1,
+							content:"Vue.js",
+							done:false,
+					},{
+							id:2,
+							content:"备忘录",
+							done:true,
+					},{
+							id:3,
+							content:"增删改查",
+							done:false,
+					}],
+					NewTodo:"",
+					NewTodoId:4,					
+				},
+				methods:{
+					addTodo:function () {
+						console.log(this.NewTodo);
+						this.todos.push({
+							id:this.NewTodoId++,
+							content:this.NewTodo,
+							done:false
+						});
+						this.NewTodo="";
+					},
+					remove:function (i) {
+						this.todos.splice(i,1);						
+					},
+					redone:function (i) {
+						this.todos[i].done=true;
+					}
+				}
+			});
+		</script>
+	</body>
+</html>
