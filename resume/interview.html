@@ -1,0 +1,281 @@
+
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>使用Element实现简单网页</title>
+		<!-- 引入样式 -->
+		<!--<link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css">-->
+		<link href="https://cdn.bootcss.com/element-ui/2.3.2/theme-chalk/index.css" rel="stylesheet">
+		<link rel="shortcut icon" href="img/fav.ico">
+		<style>
+			body {
+				background-color: #000;
+				padding: 30px;
+				font-family: "微软雅黑";
+			}
+			
+			.container {
+				min-height: 400px;
+				max-width: 1000px;
+				border: 8px solid #FFFFFF;
+				margin: auto;
+				padding: 20px;
+				color: #fff;
+			}
+			p{
+				font-size: 15px;
+			}
+			.header {
+				/*min-height: 300px;*/
+			}
+			
+			.header .logo,
+			.header .img {
+				/*border: 1px solid #fff;*/
+				/*min-height: 200px;*/
+			}
+			
+			.header .name {
+				margin: 0.5em 0;
+				font-size: 25px;
+			}
+			
+			.header .description {
+				margin-bottom: .5em;
+			}
+			
+			.header .link {
+				text-decoration: none;
+				color: #CB1B45;
+			}
+			.header .link:active {
+				text-decoration: none;
+				color: #000;
+			}
+			.header .img {
+				overflow: hidden;
+				
+			}
+			
+			.header .img img {
+				width: 100%;
+				border-radius: 25%;				
+			}
+			
+			.menu:hover {
+				transition: all .5s;
+				color: #00f;
+				font-size: 1.5em;
+			}
+			/*
+				 在屏幕设备中，并且宽度介于100px-640px的设备中使用
+				 * */
+			/*@media only screen and (min-width: 100px) and (max-width: 640px) {
+				
+				body{
+					background: #dd0;
+				}
+			}*/
+			
+			.el-button.is-round {
+				padding: 23px;
+				border-radius: 100%;
+			}
+			
+			.skill {
+				position: relative;
+				margin-top: 5px;
+				margin-right: 15px;
+			}
+			
+			.skill1{
+				/*width: 50px;
+				height: auto;*/
+			}
+			
+			.skill::after {
+				content: attr(data-text);
+				position: absolute;
+				left: 10px;
+				top: 2px;
+				font-size: 0.8em;
+			}
+			
+			.card h3,
+			.card h2 {
+				margin: 0px;
+			}
+			
+			.card h3 {
+				margin-top: 20px;
+				color: #999;
+				font-size: 0.8em;
+			}
+			
+			.card h2 {
+				margin-bottom: 20px;
+				position: relative;
+			}
+			
+			.card h2::after {
+			/*
+			 默认就是文本，默认行内元素  inline
+			 	行内元素是没有宽的
+			 	如果需要设置宽度，那么需要转化显示方式
+			 * */
+				content: " ";
+				display: inline-block;
+				width: 40px;
+				height: 8px;
+				background-color: #DCDCDC;
+				position: absolute;
+				left: 105px;
+				top: 10px;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div id="app">
+			<el-row class="container">
+				<el-col>
+					<el-row class="header" type="flex" justify="space-between" :gutter="20">
+						<el-col :xs="18" :sm="16" :md="14" :lg="12">
+							<div class="logo">
+								<h1 class="name">
+									{{ name }}
+								</h1>
+								<div class="description">
+									{{ description }}   <br /><br />
+									QQ:{{QQ}}<br /><br />
+									TEL：{{phone}}
+								</div>
+								<div class="links">
+									<a class="link" v-for="item in links" :href="item.lUrl"> {{ item.lName }} </a>
+								</div>
+							</div>
+						</el-col>
+						<el-col :xs="6" :sm="4">
+							<div class="img">
+								<img :src="imgUrl" alt="" />
+							</div>
+						</el-col>
+					</el-row>
+					<el-row class="content">
+						<el-col :span='12'>
+							<div class="card">
+								<h3>Honor Situation</h3>
+								<h2>荣誉情况</h2>
+								<div>
+									<p>1.获2016-2017学年省政府奖学金</p>
+									<p>2.获2016年度优秀共青团干部</p>
+									<p>3.获2016-2017学年三好学生</p>
+									<p>4.获2016-2017学年一等奖学金</p>
+									<p>5.获第十届大学生三创比赛一等奖</p>
+									<p>6.市心酒楼网站开发项目实践团队被评为学院2017年大学生暑期社会实践三类团队</p>
+								</div>
+							</div>
+						</el-col>
+						<el-col :span='12'>
+							<div class="card">
+								<h3>Practice Experience</h3>
+								<h2>实践经历</h2>
+								<div>
+									<p>1.大一第二学期正式加入校园创业街工作室，工作室主营网页制作、APP制作等，同时参与学校专业工作室网页制作，主要编写网页中主营业务部分。</p>
+									<p>2.参与校外小型酒楼网站开发项目制作，负责网站页面编写，并且此项目参与2017年大学生暑期社会实践活动，同时获得大学生暑期社会实践三类团队。</p>
+									<p>3.参与绍兴市服务外包竞赛，在移动录播教育平台项目中主要负责移动APP端的页面编写和最后移动端的代码汇总部分，同时所参与的团队获得专科组三等奖。</p>
+									<p>4.在此期间，多次参加浙江省、绍兴市大学生科技创新项目申报，同时是“悦园APP”项目负责人，针对校园消极现象提出产生项目想法，一次次的申报，对其进行优化，提升智慧校园生活。</p>
+								</div>
+							</div>
+						</el-col>
+						<el-col :span='12'>
+							<div class="card">
+								<h3>Skill List</h3>
+								<h2>技能列表</h2>
+								<div>
+									<el-progress class='skill' v-for="item in skills" :data-text="item.sName" :text-inside="true" :stroke-width="18" :percentage="item.sNum" :color="item.sColor"></el-progress>
+								</div>
+							</div>
+						</el-col>
+						<el-col :span='100'>
+							<div class="card">
+								<h3>Self Assessment</h3>
+								<h2>自我评价</h2>
+								<div>
+									<p>&nbsp;&nbsp;&nbsp;&nbsp;致力于用良好的心态和责任感，学会管理时间，勇于面对变化和挑战，勤于学习不断提高。</p>
+								</div>
+							</div>
+						</el-col>
+					</el-row>
+				</el-col>
+			</el-row>
+		</div>
+		<!-- 导入Vue -->
+		<script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
+		<!-- 引入组件库 -->
+		<!--<script src="https://unpkg.com/element-ui/lib/index.js"></script>-->
+		<script src="https://cdn.bootcss.com/element-ui/2.3.2/index.js"></script>
+		<script>
+			//基于Vue
+			var app = new Vue({
+					el: "#app",
+					data: {
+						name: "陈汇",
+						description: "I try to live everyday as if it was the full final day of my life.",
+						QQ: "896670031",
+						phone: "13676877812",
+						links: [{
+							lName: 'GitHub',
+							lUrl: 'https://github.com/chen0704'
+						}],
+						imgUrl: 'img/pic.jpg',
+						skills: [{
+							sName: 'js',
+							sNum: 75,
+							sColor: 'green'
+						}, {
+							sName: 'html+css',
+							sNum: 85,
+							sColor: 'green'
+						}, {
+							sName: 'javaweb',
+							sNum: 70,
+							sColor: 'green'
+						}, {
+							sName: 'java',
+							sNum: 70,
+							sColor: 'green'
+						}],
+					},
+				}
+
+			);
+			//sass less CSS的预处理器，赋予CSS以编程语言的特性
+			//sass安装   gulp\webpack 自动化构建
+			//自动化建构工具（前端开发中一些经常性的、繁琐的处理工作，比如压缩文件、合并文件、编译文件）  grunt gulp webpack
+			//CSS布局方式
+			//传统布局方式   浮动 定位  盒模型   第二学期主要学的方式   操作繁琐、自定义性强
+			//最新布局技术   瀑布流、自定义的布局方式    兼容性问题（ https://caniuse.com/）
+			//Flexbox
+			//CSS Grid 系列
+			//网格布局方式（栅格系统）
+			//bootstrap、element等UI库
+			//960 Grid System等网格库
+			//响应式布局，为了实现多个终端设备共用网页，并且呈现不同的样式
+			//媒体查询 根据使用设备的某个属性判断设备，进而呈现不同的CSS
+			//@media
+			//提高网页性能的关键点    减少请求
+			//请求   100个js .3k   浏览器向服务器说，我要这个文件   服务器接受之后反应之后发送
+			//请求   1个js   30k
+			//设置打印样式
+			//图片图标，不能动态改变颜色、大小等样式，可扩展性不强
+			//icon图标
+			//用特殊字体实现图标效果
+			//本质上，特殊网络字体。  @font-face
+			//font-awesome
+		</script>
+	</body>
+
+</html>
